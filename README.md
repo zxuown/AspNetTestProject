@@ -27,7 +27,7 @@ Welcome to my ASP.NET project! This project is a web application that serves as 
 ### 5. Register
 - You can Register.
 - You can Login and Logout.
-![Register image]([https://github.com/zxuown/AspNetTestProject/blob/master/ToDoListpng.png](https://github.com/zxuown/AspNetTestProject/blob/master/Register.png))
+![Register image]((https://github.com/zxuown/AspNetTestProject/blob/master/Register.png))
 
 ## Getting Started
 
