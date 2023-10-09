@@ -24,6 +24,11 @@ Welcome to my ASP.NET project! This project is a web application that serves as 
 - You can add tasks for any day you want, and if you change the day, the tasks will update accordingly.
 ![To-Do List image](https://github.com/zxuown/AspNetTestProject/blob/master/ToDoListpng.png)
 
+### 5. Register
+- You can Register.
+- You can Login and Logout.
+![Register image]([https://github.com/zxuown/AspNetTestProject/blob/master/ToDoListpng.png](https://github.com/zxuown/AspNetTestProject/blob/master/Register.png))
+
 ## Getting Started
 
 To get started with this project, follow these steps:
@@ -41,7 +46,7 @@ Once the project is up and running, you can access it through your web browser. 
 - News: Visit the "News" section to manage news items.
 - Map: Explore the "Map" section to add, remove, or edit points on the map.
 - To-Do List: Use the "To-Do List" to manage tasks for different days.
-
+- Register: Use "Register" or "Log In" to manage Tasks and Information about Me.
 ## Contributing
 
 If you would like to contribute to this project, feel free to fork the repository, make your changes, and submit a pull request.
