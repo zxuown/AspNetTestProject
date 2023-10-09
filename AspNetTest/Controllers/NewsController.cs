@@ -46,20 +46,20 @@ namespace AspNetTest.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-		[HttpGet]
+		[HttpGet("/News/Show/{id}")]
 		public IActionResult Show(int id)
 		{
 			var news = _context.News.First(x => x.Id == id);
 			return View(news);
 		}
-		[HttpGet]
+        [HttpGet("/News/Edit/{id}")]
         public IActionResult Edit(int id)
         {
             var news = _context.News.First(x => x.Id == id);
             return View(news);
         }
 
-        [HttpPost]
+        [HttpPost("/News/Edit/{id}")]
         public IActionResult Edit(int id, [FromForm] NewsItem newsItem, IFormFile? image)
         {
 

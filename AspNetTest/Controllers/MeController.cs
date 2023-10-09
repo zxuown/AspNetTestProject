@@ -64,14 +64,14 @@ namespace AspNetTest.Controllers
 			_context.SaveChanges();
             return RedirectToAction("Index");
         }
-        [HttpGet]
+        [HttpGet("/Me/Edit/{id}")]
         public IActionResult Edit(int id)
         {
             var abiliti = _context.Abilities.First(x => x.Id == id);
             return View(abiliti);
         }
 
-        [HttpPost]
+        [HttpPost("/Me/Edit/{id}")]
         public IActionResult Edit(int id, [FromForm] Abilities form, IFormFile? image)
         {
             if (form.Name.Length <= 1)

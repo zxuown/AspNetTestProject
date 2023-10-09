@@ -17,7 +17,7 @@ namespace AspNetTest.Controllers
         public IActionResult Index()
         {   
             ViewData["AboutMe"] = _context.AboutMe.Include(x=>x.Abilities).First();
-            ViewData["News"] = _context.News.Take(6).ToList();
+            ViewData["NewsHome"] = _context.News.Take(6).ToList();
             return View();
         }
         [HttpPost]
