@@ -1,0 +1,53 @@
+﻿@using AspNetTest.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model NewsItem
+@{
+	ViewData["Title"] = "Edit News";
+	Layout = "_Layout"; // Specify the layout template
+}
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-header">
+						<h1 class="card-title">Edit news</h1>
+					</div>
+					<div class="card-body">
+						<form method="post" enctype="multipart/form-data">
+
+						<div class="mb-3">
+							@Html.LabelFor(m => m.Header, new {@class = "form-label"})
+							@Html.TextBoxFor(m => m.Header, new {@class = "form-control", placeholder = "Input Header..."})
+							@Html.ValidationMessageFor(m => m.Header)
+							</div>
+							<div class="mb-3">
+							@Html.LabelFor(m => m.Text, new {@class = "form-label"})
+							@Html.TextBoxFor(m => m.Text, new {@class = "form-control", placeholder = "Input Text..."})
+							@Html.ValidationMessageFor(m => m.Text)
+							</div>
+
+							<div class="mb-3">
+							@Html.LabelFor(m => m.ShortText, new {@class = "form-label"})
+							@Html.TextBoxFor(m => m.ShortText, new {@class = "form-control", placeholder = "Input ShortText..."})
+							@Html.ValidationMessageFor(m => m.ShortText)
+							</div>
+							<div class="mb-3">
+							@Html.LabelFor(m => m.Image, new {@class = "form-label"})
+							@Html.TextBoxFor(m => m.Image, new {@class = "form-control", type="file", accept=".jpg,.png,.jpeg"})
+							@Html.ValidationMessageFor(m => m.Image)
+							</div>
+							<div class="mb-3">
+							@Html.LabelFor(m => m.Date, new {@class = "form-label"})
+							@Html.TextBoxFor(m => m.Date, new {@class = "form-control", placeholder = "Input Date..."})
+							@Html.ValidationMessageFor(m => m.Date)
+							</div>
+							<button type="submit" class="btn btn-success">Save</button>
+							<a href="/News/Index" class="btn btn-outline-info">Return</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

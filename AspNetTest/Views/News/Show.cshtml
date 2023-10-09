@@ -1,0 +1,28 @@
+﻿@using AspNetTest.Models;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "News";
+    Layout = "_Layout";
+}
+@model NewsItem
+<div class="container">
+		<div class="row mt-5">
+			<div class="col-md-4">
+				<div class="card" style="witdth: 100">
+					<div class="card-header">
+						<h1 class="card-title">Card: @Model.Header</h1>
+					</div>
+					<div class="card-body">
+						<img class="img-thumbnail" src="@Model.FullUrl"/>
+						<div style="text-align: center; background: pink; border:5px solid black; font-size: 20px;">@Model.Header
+						<div style=" background: yellow; border:2px solid black ">@Model.Text</div>
+						<div style="text-align: center; background: #0af05e ">@Model.Date</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

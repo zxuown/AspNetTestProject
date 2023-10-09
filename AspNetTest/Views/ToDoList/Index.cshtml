@@ -1,0 +1,87 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Map";
+    Layout = "_Layout";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="removeVindow" id="modal" style="display: none;">
+    <p id="modal-text"></p>
+    <button class="butAdd" id="modal-confirm">ОК</button>
+    <button class="butFalse" id="modal-cancel">Скасувати</button>
+  </div>
+  <!-- <input  class="inputs" type="date" id="dateInput"> -->
+  <div id="dateInput"></div>
+
+  <form id="todoForm">
+    <input  class="inputs" type="text" id="titleInput" placeholder="Назва">
+    <button class="butAdd" type="submit">Додати</button>
+  </form>
+
+  <table class="table table-hover" id="todoTable">
+
+    <thead>
+      <tr>
+        <th class="tab" onclick="sortTable('completed')">Виконано</th>
+        <th class="tab" onclick="sortTable('title')">Назва</th>
+        <th class="tab" onclick="sortTable('date')">Дата</th>
+        <th class="tab">Видалити</th>
+       
+      </tr>
+
+    </thead>
+    <tbody class="tabFalse" id="todoList"></tbody>
+  </table>
+
+  <button class="butRemoveAll" onclick="deleteCompleted()">Видалити виконані</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/js/AspNetToDoList.js"></script>
+}
+@section Styles {  
+    <style>
+     .completed {
+      text-decoration: line-through;
+      background: greenyellow;
+    }
+    .butAdd{
+        background: greenyellow;
+        color: aliceblue;
+    }
+    .inputs{
+        background-color: bisque;
+    }
+    .tab{
+        background: orange;
+    }
+    .tabFalse{
+        background: red;
+    }
+    .butRemoveAll{
+        background: pink;
+        color: black;
+    }
+    .removeVindow{
+        width: 200px;
+        height: 110px;
+        color: aliceblue;
+        background: dimgray;
+        border: 5px solid black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+    .butFalse{
+        background: red;
+        color: aliceblue;
+    }
+    </style>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.3.5/air-datepicker.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.3.5/air-datepicker.min.js"></script>
+}

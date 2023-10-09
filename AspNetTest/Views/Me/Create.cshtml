@@ -1,0 +1,43 @@
+﻿@using AspNetTest.Models;
+@{
+
+}
+@model Abilities
+@{
+	ViewData["Title"] = "Abilities";
+	Layout = "_Layout"; // Specify the layout template
+}
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col-md-4">
+				<div class="card">
+					<div class="card-header">
+						<h1 class="card-title">Create ability</h1>
+					</div>
+					<div class="card-body">
+						<form method="post" enctype="multipart/form-data">
+
+							<div class="mb-3">
+								@Html.LabelFor(m => m.Name, new {@class = "form-label"})
+								@Html.TextBoxFor(m => m.Name, new {@class = "form-control", placeholder = "Input name..."})
+								@Html.ValidationMessageFor(m => m.Name)
+							</div>
+
+							<div class="mb-3">
+								@Html.LabelFor(m => m.Level, new {@class = "form-label"})
+								@Html.TextBoxFor(m => m.Level, new {@class = "form-control", placeholder = "Input Level...", type="number", min = 0, step=1})
+								@Html.ValidationMessageFor(m => m.Level)
+							</div>
+							<div class="mb-3">
+							@Html.LabelFor(m => m.Image, new {@class = "form-label"})
+							@Html.TextBoxFor(m => m.Image, new {@class = "form-control", type="file", accept=".jpg,.png,.jpeg"})
+							@Html.ValidationMessageFor(m => m.Image)
+							</div>
+							<button type="submit" class="btn btn-success">Save</button>
+							<a href="/Me/Index" class="btn btn-outline-info">Return</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

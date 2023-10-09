@@ -1,0 +1,71 @@
+﻿@using AspNetTest;
+@using AspNetTest.Models;
+@*
+   
+*@
+@{
+    var aboutMe = ViewData["AboutMe"] as AboutMe;
+    var news = ViewData["News"] as List<NewsItem>;
+}
+
+@{
+    ViewData["Title"] = "My Page";
+    Layout = "_Layout";
+}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h1>About me</h1>
+                    <div>
+                        <div style="display:flex;text-align: center">
+                    @foreach (var item in news)
+                    {
+                               <div class="card" style="width: 18rem; text-align: center">
+                                  <img class="card-img-top"  src="@item.FullUrl" alt="Card image cap">
+                          <div class="card-body">
+                                <h5 class="card-title">@item.Header</h5>
+                            <p class="card-text">@item.ShortText</p>
+                            <a href="/News/Show/@item.Id" class="btn btn-primary">Watch more</a>
+                          </div>
+                        </div>
+
+
+                    }
+                        </div>
+                    
+                    <div>
+                    <span class="badge bg-success">@aboutMe.Name</span>
+                    <span class="badge bg-success">@aboutMe.SecondName</span>
+                    <span class="badge bg-success">@aboutMe.Age</span>
+                    </div>
+                  
+                    <span class="badge bg-danger">@aboutMe.Abilities.Count</span>
+                    @foreach (var item in aboutMe.Abilities)
+                    {
+                                <span class="badge bg-success">@item.Name<span class="badge bg-success">@item.Level</span></span>
+                               
+                               
+                    }
+                    
+                </div>
+                 <div>
+                    <a class="btn btn-outline-success" href="/Me/Index">AboutMe</a>
+                </div>
+                <div>
+                    <div class="mb-3">
+                        <label for="search" class="form-label">Search</label>
+                        <input type="text" class="form-control" id="search" placeholder="Type something about Me" />
+                    </div>
+                </div>
+            </div>
+         
+            <ul class="list-group" id="search-result">
+
+            </ul>
+        </div>
+    </div>
+    @section Scripts {
+            <script src="js/aboutMe.js"></script>
+    }
+
+
